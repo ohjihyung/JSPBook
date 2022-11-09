@@ -1,0 +1,126 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+	<!-- 기본 인증 처리 방법으로 보안 처리하기 -->
+ 	<!-- <security-role>
+ 		<role-name>role1</role-name>
+ 	</security-role>
+ 	<security-constraint>
+ 		<web-resource-collection>
+ 			<web-resource-name>JSPBOOK</web-resource-name>
+	 		<url-pattern>/ch10/security01.jsp</url-pattern>
+	 		<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description></description>
+			<role-name>role1</role-name>
+		</auth-constraint>
+ 	</security-constraint>
+ 	<login-config>
+ 		<auth-method>BASIC</auth-method>
+ 	</login-config> -->
+ 	
+ 	<!-- 폼 기반 인증 방법으로 보안 처리하기  -->
+ 	<!-- <security-role>
+ 		<role-name>role1</role-name>
+ 	</security-role>
+ 	<security-constraint>
+ 		<web-resource-collection>
+ 			<web-resource-name>JSPBOOK</web-resource-name>
+	 		<url-pattern>/ch10/security01.jsp</url-pattern>
+	 		<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description></description>
+			<role-name>role1</role-name>
+		</auth-constraint>
+ 	</security-constraint>
+ 	<login-config>
+ 		<auth-method>FORM</auth-method>
+ 		<form-login-config>
+ 			<form-login-page>
+ 				/ch10/login.jsp
+ 			</form-login-page>
+ 			<form-error-page>
+ 				/ch10/login_failed.jsp
+ 			</form-error-page>
+ 		</form-login-config>
+ 	</login-config> -->
+<!--  	 <security-role> -->
+<!--  		<role-name>role1</role-name> -->
+<!--  	</security-role> -->
+<!--  	<security-constraint> -->
+<!--  		<web-resource-collection> -->
+<!--  			<web-resource-name>JSPBOOK</web-resource-name> -->
+<!-- 	 		<url-pattern>/ch10/security02.jsp</url-pattern> -->
+<!-- 	 		<http-method>GET</http-method> -->
+<!-- 		</web-resource-collection> -->
+<!-- 		<auth-constraint> -->
+<!-- 			<description></description> -->
+<!-- 			<role-name>role1</role-name> -->
+<!-- 		</auth-constraint> -->
+<!--  	</security-constraint> -->
+<!--  	<login-config> -->
+<!--  		<auth-method>FORM</auth-method> -->
+<!--  		<form-login-config> -->
+<!--  			<form-login-page> -->
+<!--  				/ch10/login.jsp -->
+<!--  			</form-login-page> -->
+<!--  			<form-error-page> -->
+<!--  				/ch10/login_failed.jsp -->
+<!--  			</form-error-page> -->
+<!--  		</form-login-config> -->
+<!--  	</login-config>  -->
+ 	
+ 	
+ 	<!-- 11 장  예외 처리
+ 	
+ 		오류 발생 시 오류 상태와 해당 오류에 관한 오류 페이지를 출력하도록 작성
+ 		
+ 		오류가 발생시 오류코드 500 설정하도록 error-code 요소 작성
+ 		오류 발생시 오류페이지 errorCode_error.jsp 호출하도록 location요소 작성
+ 	 -->
+ 	 <error-page>
+ 		<error-code>500</error-code>
+ 		<location>/ch11/errorCode_error.jsp</location>
+ 	
+ 	</error-page>
+ 	 
+ 	<!-- 
+ 	    오류가 발생햇을 때 오류 상태와 오류 페이지를 출력하도록 작성
+ 	    오류가 발생했을 때 예외 유형을 설정하도록 exception-type 요소를 작성
+ 	    오류가 발생했을 때 오류 페이지 exceptionType_error.jsp를 호출하도록 
+ 	    location 요소를 작성 
+ 	 -->
+ 	
+ 	
+ 	
+ 	<error-page>
+ 		<exception-type>java.lang.Exception</exception-type>
+ 		<location>/ch11/exceptionType_error.jsp</location>
+ 	</error-page> 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	 <security-role>
+ 		<role-name>admin</role-name>
+ 	</security-role>
+ 	<security-constraint>
+ 		<web-resource-collection>
+ 			<web-resource-name>JSPBOOK</web-resource-name>
+	 		<url-pattern>/ch11/total_test/boardForm.jsp</url-pattern>
+	 		<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description></description>
+			<role-name>admin</role-name>
+		</auth-constraint>
+ 	</security-constraint>
+ 	<login-config>
+ 		<auth-method>FORM</auth-method>
+ 		<form-login-config>
+ 			<form-login-page>/ch11/total_test/login.jsp</form-login-page>
+ 			<form-error-page>/ch11/total_test/login_failed.jsp</form-error-page>
+ 		</form-login-config>
+ 	</login-config> 
+</web-app>
