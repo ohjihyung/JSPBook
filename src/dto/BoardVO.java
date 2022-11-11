@@ -2,12 +2,14 @@ package dto;
 
 
 public class BoardVO {
+	
 	private String bo_id;		// 게시판 아이디
 	private String bo_title;	// 게시판 제목
 	private String bo_content;	// 게시판 내용
 	private String bo_writer;	// 게시판 작성자
 	private String bo_date;		// 게시판 작성일
 	private String bo_hit;		// 게시판 조회수
+	
 	public String getBo_id() {
 		return bo_id;
 	}
@@ -44,5 +46,6 @@ public class BoardVO {
 	public void setBo_hit(String bo_hit) {
 		this.bo_hit = bo_hit;
 	}
+
 
 }
